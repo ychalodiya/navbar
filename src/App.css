@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+/*
++--[ED25519 256]--+
+|          .o =+..|
+|           .*... |
+|         .o  =  .|
+|        *.++o o. |
+|       +SBo+BoE..|
+|        +..*+o..+|
+|       . . o+ oo.|
+|          o=o+. .|
+|         ..o*o   |
++----[SHA256]-----+ 
+*/
+:root {
+  --color-bg: #fff;
+  --color-text: rgb(180, 179, 179);
+  --color-underline: #333;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  background-color: var(--color-bg);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.menu__list {
+  --underline-width: 142px;
+  --underline-offset-x: 0px;
+  border-bottom: 2px solid rgb(180, 179, 179);
+  position: relative;
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.menu__list::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 100%;
+  height: 2px;
+  width: var(--underline-width);
+  transform: translateX(var(--underline-offset-x));
+  background-color: var(--color-underline);
+  transition: transform 0.5s, width 0.5s;
+  border-radius: 4px;
+}
+
+.menu__link {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.menu__item {
+  color: var(--color-text);
+}
+
+.menu__item:hover {
+  cursor: pointer;
+  color: #85f4ff;
+}
+
+.menu__item.active:hover {
+  cursor: default;
+}
+
+.menu__item.active .menu__link {
+  color: black;
+}
